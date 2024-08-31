@@ -1,0 +1,195 @@
+/*--------------------------------------------------------------
+# Login Page
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+# Register Page
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+# Main Page
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+# Sidebar
+--------------------------------------------------------------*/
+
+.SidebarContainter{
+
+    background-color: black;
+    color: white;
+    height: 100vh;
+    width:17vw;
+    text-align: center;
+    position: fixed;
+    right: 0;
+    bottom: 0vh;
+}
+
+.UserIcon{
+
+    text-align: center;
+    margin-top: 15%;
+    
+}
+
+.UserName{
+    font-size: 1.5rem;
+    margin-top: 5%;
+}
+
+.Logout{
+
+    position: fixed;
+    right: 1%;
+    bottom: 1%;
+}
+
+/*--------------------------------------------------------------
+# Navbar
+--------------------------------------------------------------*/
+
+.NavIcon {
+    cursor: pointer;
+    position: fixed;
+    top: 1%;
+    left: 1%;
+    z-index: 1001;
+    fill: black;
+    transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.NavIcon.rotated {
+    transform: rotate(90deg);
+    fill: white;
+}
+
+.SlidingBox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 17vw;
+    background-color: black;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+}
+
+.SlidingBox.show {
+    transform: translateX(0);
+}
+
+.Restaurant {
+    position: fixed;
+    font-size: 1.5rem;
+    top: 10%;
+    left: 2%;
+    color: white;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.Restaurant.showText {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.Cafe {
+    position: fixed;
+    font-size: 1.5rem;
+    top: 15%;
+    left: 2%;
+    color: white;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.Cafe.showText {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.Store {
+    position: fixed;
+    font-size: 1.5rem;
+    top: 30%;
+    left: 2%;
+    color: white;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.Store.showText {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.Shopping {
+    position: fixed;
+    font-size: 1.5rem;
+    top: 25%;
+    left: 2%;
+    color: white;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.Shopping.showText {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.Hospital {
+    position: fixed;
+    font-size: 1.5rem;
+    top: 20%;
+    left: 2%;
+    color: white;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.Hospital.showText {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.GasStation {
+    position: fixed;
+    font-size: 1.5rem;
+    top: 35%;
+    left: 2%;
+    color: white;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.GasStation.showText {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.BookMark {
+    position: fixed;
+    font-size: 1.5rem;
+    top: 40%;
+    left: 2%;
+    color: white;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.BookMark.showText {
+    opacity: 1;
+    transform: translateX(0);
+}
