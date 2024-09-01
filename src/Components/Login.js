@@ -15,7 +15,7 @@ const LogIn = () => {
 
     try {
       // 서버로 로그인 요청
-      const response = await axios.post('/api/login', { userid: id, password });
+      const response = await axios.post('http://localhost:8080/login', { userid: id, password });
       const authToken = response.data.token;
 
       // 토큰을 쿠키에 저장

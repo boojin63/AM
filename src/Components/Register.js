@@ -27,7 +27,7 @@ const Register = () => {
 
     try {
       // 서버로 회원가입 요청
-      await axios.post('/api/register', {
+      await axios.post('http://localhost:8080/register', {
         nickname,
         userid,
         password,
