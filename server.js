@@ -2,22 +2,28 @@ const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const jwt = require('jsonwebtoken');
 
 const app = express();
+const secretKey = 'your_secret_key';
 
 app.use(cors({
-  methods: ['GET', 'POST']
+  origin: 'http://localhost:3000',  
+  methods: ['GET', 'POST'],
+  credentials: true
 }));
 
-// MySQL 연결 설정
+app.use(bodyParser.json());
+
+
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: '1234',  // MySQL 비밀번호
-  database: 'user'   // 데이터베이스 이름
+  password: '1234',  
+  database: 'user'   
 });
 
-// 데이터베이스 연결 시도
+
 connection.connect((err) => {
   if (err) {
     console.error('MySQL 연결 오류:', err);
@@ -26,20 +32,16 @@ connection.connect((err) => {
   console.log('MySQL에 성공적으로 연결되었습니다.');
 });
 
-// POST 요청의 데이터를 처리할 수 있게 설정
-app.use(bodyParser.json());
 
-// 회원가입 정보를 DB에 저장하는 라우트
-app.post('/', (req, res) => {
-  const { userId, password, nickname, name, birthdate, phoneNumber, gender } = req.body;
+app.post('/register', (req, res) => {
+  const { userid, password, nickname } = req.body;
 
-  // 사용자 정보를 DB에 삽입하는 쿼리
   const query = `
-    INSERT INTO users (userId, password, nickname, name, birthdate)
-    VALUES (?, ?, ?, ?, ?)
+    INSERT INTO users (userid, password, nickname)
+    VALUES (?, ?, ?)
   `;
 
-  connection.query(query, [userId, password, nickname, name, birthdate], (err, results) => {
+  connection.query(query, [userid, password, nickname], (err, results) => {
     if (err) {
       console.error('데이터 삽입 오류:', err);
       res.status(500).send('회원가입 중 오류가 발생했습니다.');
@@ -49,7 +51,27 @@ app.post('/', (req, res) => {
   });
 });
 
-// 서버 실행
+app.post('/login', (req, res) => {
+  const { userid, password } = req.body;
+
+  const query = 'SELECT * FROM users WHERE userid = ? AND password = ?';
+  connection.query(query, [userid, password], (err, results) => {
+    if (err) {
+      console.error('데이터 조회 오류:', err);
+      res.status(500).send('서버 오류가 발생했습니다.');
+      return;
+    }
+
+    if (results.length > 0) {
+      const token = jwt.sign({ userid: userid }, secretKey, { expiresIn: '1h' });
+      res.status(200).json({ token });
+    } else {
+      res.status(401).send('아이디 또는 비밀번호가 올바르지 않습니다.');
+    }
+  });
+});
+
+
 app.listen(8080, () => {
   console.log('http://localhost:8080 에서 서버 실행중');
 });
