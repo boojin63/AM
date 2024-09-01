@@ -8,6 +8,11 @@
 # Main Page
 --------------------------------------------------------------*/
 
+.KaKaoMap {
+    z-index: 1;
+}
+
+
 
 /*--------------------------------------------------------------
 # Sidebar
@@ -24,6 +29,7 @@
     position: fixed;
     right: 0;
     bottom: 0vh;
+    z-index: 1001;
 }
 
 .Logo {
@@ -32,6 +38,7 @@
     right: -7vw;
     top: -11vh;
     width: 30vw; 
+    cursor: pointer;
 }
 
 .AM_Text {
@@ -105,6 +112,14 @@
 # Navbar
 --------------------------------------------------------------*/
 
+.NavContainer {
+    position: fixed; /* 고정 위치로 설정하여 항상 화면에 표시 */
+    top: 0;
+    left: 0;
+    width: 100%; /* Navbar가 화면 너비를 차지하도록 설정 */
+    z-index: 1002; /* 높은 z-index로 설정하여 맵 위에 위치 */
+}
+
 .NavIcon {
     cursor: pointer;
     position: fixed;
@@ -142,6 +157,7 @@
     left: 15%;
     color: white;
     opacity: 0;
+    cursor: pointer;
     transform: translateX(-100%);
     transition: transform 0.5s ease, opacity 0.5s ease;
 }
