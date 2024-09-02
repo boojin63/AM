@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import logoImage from '../assets/logo.png';
 import { useNavigate } from 'react-router-dom';
-import '../Css/Style.css'
+import '../Css/Style.css';
 import axios from 'axios';
 
 const Register = () => {
@@ -47,8 +47,8 @@ const Register = () => {
       <div className="logo">
         <img src={logoImage} alt="Around Me" />
       </div>
-      <h1>회원 가입</h1>
-      <form className='out' onSubmit={handleSubmit}>
+      <h1 className="register-title">회원 가입</h1>
+      <form className="register-form" onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="닉네임"
@@ -95,7 +95,7 @@ const Register = () => {
             /> 위치 기반 서비스 정보 제공 동의(필수)
           </label>
         </div>
-        <button type="submit">회원 가입</button>
+        <button className="registerbtn" type="submit">회원 가입</button>
       </form>
       <p className="login-text">
         이미 Around Me 회원이신가요? <a href="/login">로그인</a>

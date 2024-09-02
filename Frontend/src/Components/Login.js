@@ -33,9 +33,9 @@ const LogIn = () => {
       <div className="logo">
         <img src={logoImage} alt="Around Me" />
       </div>
-      <h1>Login</h1>
-      <p>Welcome to Around Me</p>
-      <form className='in' onSubmit={handleSubmit}>
+      <h1 className="login-title">Login</h1>
+      <p className="welcome-text">Welcome to Around Me</p>
+      <form className="login-form" onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="아이디"
@@ -50,7 +50,7 @@ const LogIn = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button type="submit">Login</button>
+        <button className="loginbtn" type="submit">Login</button>
       </form>
       <p className="register-text">
         아직 회원 가입을 못 하셨나요? <a href="/register">회원가입</a>

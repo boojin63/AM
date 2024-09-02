@@ -2,7 +2,114 @@
 # Login Page, Register Page
 --------------------------------------------------------------*/
 
+/* body 제거 */
 
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 120px auto;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.register-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 70px auto;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.logo img {
+    width: 250px;
+    height: auto;
+    margin-bottom: -55px;
+}
+
+/* h1 className 수정 */
+.login-title, .register-title h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+/* p className 수정 */
+.welcome-text p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* form className 수정 */
+.login-form, .register-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* form className 수정 */
+.login-form input[type="text"], .login-form input[type="password"] {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+}
+
+/* form className 수정 */
+.register-form input[type="text"], .register-form input[type="password"] {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    outline: none;
+    /* border-radius: 15px; */
+}
+
+/* button className 수정 */
+.loginbtn, .registerbtn {
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    font-size: 15px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+/* button className 수정 */
+.loginbtn, .registerbtn [type="submit"] {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.checkboxes {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.checkboxes label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.register-text, .login-text {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.register-text a, .login-text a {
+    color: #000;
+    margin-left: 120px;
+    text-decoration: none;
+}
+
+.register-text a:hover, .login-text a:hover {
+    text-decoration: underline;
+}
 
 /*--------------------------------------------------------------
 # Main Page
